@@ -7,38 +7,40 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form #consultationUpdateForm="ngForm" (ngSubmit)="onConsultUpdate(consultationUpdateForm.value)">
             <fieldset [disabled]="!isEdit">
               <div class="mb-3">
                 <label for="patientTextInput" class="form-label">Пациент:</label>
-                <input type="text" id="patientTextInput" class="form-control" placeholder="{{consult.patientName}}">
+                <input name="patientName" type="text" class="form-control" [(ngModel)]="consult.patientName" placeholder="{{consult.patientName}}">
               </div>
               <div class="mb-3">
                 <label for="diagnosisTextInput" class="form-label">Диагноз:</label>
-                <input type="text" id="diagnosisTextInput" class="form-control" placeholder="{{consult.diagnosis}}">
+                <input name="diagnosis" type="text" class="form-control" [(ngModel)]="consult.diagnosis" placeholder="{{consult.diagnosis}}">
               </div>
               <div class="mb-3">
                 <label for="dateСonclusionTextInput" class="form-label">Дата:</label>
-                <input type="text" id="dateConclusionTextInput" class="form-control" placeholder="{{consult.dateConclusion | date: 'medium'}}">
+                <input name="dateConclusion" type="text" class="form-control" [(ngModel)]="consult.dateConclusion" placeholder="{{consult.dateConclusion | date: 'medium'}}">
               </div>
               <div class="mb-3">
                 <label for="doctorTextInput" class="form-label">Доктор:</label>
-                <input type="text" id="doctorTextInput" class="form-control" placeholder="{{consult.doctorName}}">
+                <input name="doctorName" type="text" class="form-control" [(ngModel)]="consult.doctorName" placeholder="{{consult.doctorName}}">
               </div>
               <div class="mb-3">
                 <label for="recommendationTextInput" class="form-label">Рекомендации:</label>
-                <input type="text" id="recommendationTextInput" class="form-control" placeholder="{{consult.recommendation}}">
+                <input name="recommendation" type="text" class="form-control" [(ngModel)]="consult.recommendation" placeholder="{{consult.recommendation}}">
               </div>
               <div class="mb-3">
                 <label for="departmentTextInput" class="form-label">Отделение:</label>
-                <input type="text" id="departmentTextInput" class="form-control" placeholder="{{consult.department}}">
+                <input name="department" type="text" class="form-control" [(ngModel)]="consult.department" placeholder="{{consult.department}}">
               </div>
             </fieldset>
+            <div class="button-block">
+              <button type="submit" [hidden]="!isEdit" class="btn btn-primary">Сохранить изменения</button>
+            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-          <button [hidden]="!isEdit" type="button" class="btn btn-primary">Сохранить изменения</button>
         </div>
       </div>
     </div>

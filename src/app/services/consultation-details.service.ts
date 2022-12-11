@@ -14,8 +14,10 @@ export class ConsultationDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  update(consultation: Consultation) {
-    this.consultation = consultation;
+  update(consultation: Consultation, consultId: number) {
+    console.log("update method is called");
+    console.log(consultation);
+    return this.http.put(this.url + '/' + consultId, consultation);
   }
   
   deleteConsultation(consultId: number) {

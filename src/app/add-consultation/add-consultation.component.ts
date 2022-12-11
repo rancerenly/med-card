@@ -16,7 +16,9 @@ export class AddConsultationComponent implements OnInit {
     diagnosis: '',
     recommendation: '',
     department: '',
-    doctorName: ''
+    doctorName: '',
+    id: 0,
+    dateConclusion: new Date(),
   }
 
   ngOnInit(): void {
