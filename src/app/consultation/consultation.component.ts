@@ -13,7 +13,7 @@ export class ConsultationComponent implements OnInit {
   constructor(private consultService: ConsultationService, private consultDetailSerivce: ConsultationDetailsService) { }
 
   consultations: Consultation[] = [];
-
+  isEdit: boolean = false;
   selectedConsultation!: Consultation;
 
   ngOnInit(): void {
@@ -21,10 +21,12 @@ export class ConsultationComponent implements OnInit {
   }
 
   onReadMore(consultation: Consultation): void {
+    this.isEdit = false;
     this.selectedConsultation = consultation;
   }
   onUpdate(consultation: Consultation) {
-    
+    this.isEdit = true;
+    this.selectedConsultation = consultation;
   }
 
   onDelete(consultation: Consultation): void {

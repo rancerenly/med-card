@@ -12,6 +12,8 @@ export class ConsultationDetailsComponent implements OnInit {
 
   constructor(public consultDetailService: ConsultationDetailsService) { }
 
+  @Input() isEdit = false;
+
   @Input() consultation!: Consultation;
   
   ngOnInit(): void {
