@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="moreModalLable">{{consult.patient}}</h5>
+          <h5 class="modal-title" id="moreModalLable">{{consult.patientName}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
@@ -11,7 +11,7 @@
             <fieldset disabled>
               <div class="mb-3">
                 <label for="patientTextInput" class="form-label">Пациент:</label>
-                <input type="text" id="patientTextInput" class="form-control" placeholder="{{consult.patient}}">
+                <input type="text" id="patientTextInput" class="form-control" placeholder="{{consult.patientName}}">
               </div>
               <div class="mb-3">
                 <label for="diagnosisTextInput" class="form-label">Диагноз:</label>
@@ -19,11 +19,11 @@
               </div>
               <div class="mb-3">
                 <label for="dateСonclusionTextInput" class="form-label">Дата:</label>
-                <input type="text" id="dateConclusionTextInput" class="form-control" placeholder="{{consult.date | date: 'medium'}}">
+                <input type="text" id="dateConclusionTextInput" class="form-control" placeholder="{{consult.dateConclusion | date: 'medium'}}">
               </div>
               <div class="mb-3">
                 <label for="doctorTextInput" class="form-label">Доктор:</label>
-                <input type="text" id="doctorTextInput" class="form-control" placeholder="{{consult.doctor}}">
+                <input type="text" id="doctorTextInput" class="form-control" placeholder="{{consult.doctorName}}">
               </div>
               <div class="mb-3">
                 <label for="recommendationTextInput" class="form-label">Рекомендации:</label>

@@ -1,11 +1,10 @@
 export interface Consultation {
-  date: Date;
   id: number;
-  patient: string;
-  diagnosis: string;
+  patientName: string;
+  doctorName: string;
+  dateConclusion: Date;
   recommendation: string;
+  diagnosis: string;
   department: string;
-  doctor: string;
-
 }
 
