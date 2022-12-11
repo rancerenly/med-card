@@ -14,10 +14,27 @@ export class ConsultationDetailsComponent implements OnInit {
 
   @Input() isEdit = false;
 
-  @Input() consultation!: Consultation;
+  @Input() consultId = 0;
+
+  @Input() consultation: Consultation = {
+    id: 0,
+    patientName: '',
+    diagnosis: '',
+    recommendation: '',
+    department: '',
+    doctorName: '',
+    dateConclusion: new Date(),
+  }
   
   ngOnInit(): void {
 
+  }
+  onConsultUpdate(consultation: Consultation): void {
+    console.log("print update request")
+    this.consultDetailService.update(consultation, this.consultId)
+    .subscribe(
+      (res) => console.log(res)
+    );
   }
 
 }

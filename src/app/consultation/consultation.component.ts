@@ -15,6 +15,7 @@ export class ConsultationComponent implements OnInit {
   consultations: Consultation[] = [];
   isEdit: boolean = false;
   selectedConsultation!: Consultation;
+  consultId = 0;
 
   ngOnInit(): void {
     this.getConsultations();
@@ -24,16 +25,18 @@ export class ConsultationComponent implements OnInit {
     this.isEdit = false;
     this.selectedConsultation = consultation;
   }
-  onUpdate(consultation: Consultation) {
+  onUpdate(consultation: Consultation, consultId: number) {
+    console.log(consultId);
     this.isEdit = true;
     this.selectedConsultation = consultation;
+    this.consultId = consultId;
   }
 
   onDelete(consultation: Consultation): void {
     this.selectedConsultation = consultation;
     if(this.selectedConsultation.id) {
-      const consultId = this.selectedConsultation.id;
-    this.consultDetailSerivce.deleteConsultation(consultId).subscribe(() => {
+      this.consultId = this.selectedConsultation.id;
+    this.consultDetailSerivce.deleteConsultation(this.consultId).subscribe(() => {
       console.log("consultation deleted");
       this.getConsultations();
     });
