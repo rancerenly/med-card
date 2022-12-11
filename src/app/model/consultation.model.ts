@@ -1,8 +1,8 @@
 export interface Consultation {
-  id: number;
+  id?: number;
   patientName: string;
   doctorName: string;
-  dateConclusion: Date;
+  dateConclusion?: Date;
   recommendation: string;
   diagnosis: string;
   department: string;
