@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Cons } from 'rxjs';
 import { Consultation } from '../model/consultation.model';
@@ -23,7 +24,7 @@ export class ConsultationDetailsComponent implements OnInit {
     recommendation: '',
     department: '',
     doctorName: '',
-    dateConclusion: new Date(),
+    dateConclusion: new Date() 
   }
   
   ngOnInit(): void {
