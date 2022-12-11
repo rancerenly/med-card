@@ -10,10 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class ConsultationService {
 
   url = "http://localhost:3000/consultation";
-  
+
   constructor(private http: HttpClient) {}
 
   getConsultations() {
     return this.http.get<Consultation[]>(this.url);
+  }
+
+  postConsultation(consultation: Consultation) {
+    return this.http.post<Consultation>(this.url, consultation);
   }
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
@@ -17,10 +17,8 @@ export class ConsultationDetailsService {
   update(consultation: Consultation) {
     this.consultation = consultation;
   }
-  /*
-  deleteConsultation(consultation: Consultation): Observable<Consultation[]> {
-    const index = CONSULTATIONS.findIndex(c => c.id == consultation.id);
-    CONSULTATIONS.splice(index, 1);
-    return of(CONSULTATIONS);
-  }*/
+  
+  deleteConsultation(consultId: number) {
+    return this.http.delete(this.url + '/' + consultId);
+  }
 }
