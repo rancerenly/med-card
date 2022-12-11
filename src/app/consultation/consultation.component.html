@@ -15,10 +15,10 @@
     <tbody>
       <tr *ngFor="let consult of consultations; index as indexOfelement;">
         <th scope="row" >{{indexOfelement+1}}</th>
-        <td>{{consult.patient}}</td>
-        <td>{{consult.doctor}}</td>
+        <td>{{consult.patientName}}</td>
+        <td>{{consult.doctorName}}</td>
         <td>{{consult.diagnosis}}</td>
-        <td>{{consult.date| date: 'medium'}}</td>
+        <td>{{consult.dateConclusion| date: 'medium'}}</td>
         <td><button class= "btn btn-info" type="button" (mouseenter)="onReadMore(consult)" data-bs-toggle="modal" data-bs-target="#moreModal">Подробнее</button></td>
         <td><button class= "btn btn-warning" type="button" (click)="onUpdate(consult)">Изменить</button></td>
         <td><button class= "btn btn-danger" type="button" (click)="onDelete(consult)">Удалить</button></td>

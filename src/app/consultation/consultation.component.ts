@@ -34,7 +34,10 @@ export class ConsultationComponent implements OnInit {
   }
 
   getConsultations(): void {
-    this.consultService.getConsultations().subscribe((data: Consultation[]) => this.consultations = data);
+    this.consultService.getConsultations().subscribe((data: Consultation[]) => 
+    {this.consultations = data;
+    console.log(data)}
+    );
   }
 
 }
