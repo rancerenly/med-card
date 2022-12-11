@@ -11,27 +11,27 @@
             <fieldset [disabled]="!isEdit">
               <div class="mb-3">
                 <label for="patientTextInput" class="form-label">Пациент:</label>
-                <input name="patientName" type="text" class="form-control" [(ngModel)]="consult.patientName" placeholder="{{consult.patientName}}">
+                <input name="patientName" type="text" class="form-control" [(ngModel)]="consult.patientName">
               </div>
               <div class="mb-3">
                 <label for="diagnosisTextInput" class="form-label">Диагноз:</label>
-                <input name="diagnosis" type="text" class="form-control" [(ngModel)]="consult.diagnosis" placeholder="{{consult.diagnosis}}">
+                <input name="diagnosis" type="text" class="form-control" [(ngModel)]="consult.diagnosis">
               </div>
               <div class="mb-3" [hidden]="isEdit">
                 <label for="dateСonclusionTextInput" class="form-label">Дата:</label>
-                <input name="dateConclusion" type="text" class="form-control" [(ngModel)]="consult.dateConclusion" placeholder="{{consult.dateConclusion | date: 'medium'}}">
+                <div name="dateConclusion" type="text" class="form-control date-conclusion"> {{consult.dateConclusion | date: 'long'}}</div>
               </div>
               <div class="mb-3">
                 <label for="doctorTextInput" class="form-label">Доктор:</label>
-                <input name="doctorName" type="text" class="form-control" [(ngModel)]="consult.doctorName" placeholder="{{consult.doctorName}}">
+                <input name="doctorName" type="text" class="form-control" [(ngModel)]="consult.doctorName">
               </div>
               <div class="mb-3">
                 <label for="recommendationTextInput" class="form-label">Рекомендации:</label>
-                <input name="recommendation" type="text" class="form-control" [(ngModel)]="consult.recommendation" placeholder="{{consult.recommendation}}">
+                <input name="recommendation" type="text" class="form-control" [(ngModel)]="consult.recommendation">
               </div>
               <div class="mb-3">
                 <label for="departmentTextInput" class="form-label">Отделение:</label>
-                <input name="department" type="text" class="form-control" [(ngModel)]="consult.department" placeholder="{{consult.department}}">
+                <input name="department" type="text" class="form-control" [(ngModel)]="consult.department">
               </div>
             </fieldset>
             <div class="button-block">
