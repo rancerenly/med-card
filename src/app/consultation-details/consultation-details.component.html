@@ -17,7 +17,7 @@
                 <label for="diagnosisTextInput" class="form-label">Диагноз:</label>
                 <input name="diagnosis" type="text" class="form-control" [(ngModel)]="consult.diagnosis" placeholder="{{consult.diagnosis}}">
               </div>
-              <div class="mb-3">
+              <div class="mb-3" [hidden]="isEdit">
                 <label for="dateСonclusionTextInput" class="form-label">Дата:</label>
                 <input name="dateConclusion" type="text" class="form-control" [(ngModel)]="consult.dateConclusion" placeholder="{{consult.dateConclusion | date: 'medium'}}">
               </div>
