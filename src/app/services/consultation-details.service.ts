@@ -9,7 +9,7 @@ import { Consultation } from '../model/consultation.model';
 })
 export class ConsultationDetailsService {
 
-  url = "http://127.0.0.1:5000/med-card/api/consultations"
+  url = "http://localhost:3000/consultation";
   consultation?: Consultation;
 
   constructor(private http: HttpClient) { }
