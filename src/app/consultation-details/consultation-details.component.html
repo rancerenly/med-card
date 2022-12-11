@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
           <form>
-            <fieldset disabled>
+            <fieldset [disabled]="!isEdit">
               <div class="mb-3">
                 <label for="patientTextInput" class="form-label">Пациент:</label>
                 <input type="text" id="patientTextInput" class="form-control" placeholder="{{consult.patientName}}">
