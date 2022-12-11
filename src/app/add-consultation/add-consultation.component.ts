@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Consultation } from '../model/consultation.model';
 import { ConsultationService } from '../services/consultation.service';
 
@@ -9,7 +10,7 @@ import { ConsultationService } from '../services/consultation.service';
 })
 export class AddConsultationComponent implements OnInit {
 
-  constructor(private consultationService: ConsultationService ) { }
+  constructor(private consultationService: ConsultationService, private router: Router ) { }
 
   consultation: Consultation = {
     patientName: '',
@@ -24,11 +25,12 @@ export class AddConsultationComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  onConsultCreate(consultation: Consultation): void {
+  onConsultCreate(consultation: Consultation ){
     this.consultationService.postConsultation(consultation)
     .subscribe(
       (res) => console.log(res)
     );
+    this.router.navigate(['/consultation']);
   }
 
 }
