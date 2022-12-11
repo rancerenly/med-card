@@ -3,29 +3,30 @@
         <form #consultationForm="ngForm" (ngSubmit)="onConsultCreate(consultationForm.value)">
             <div class="mb-3">
                 <label for="patientInput" class="form-label">Имя пациента</label>
-                <input name="patientName" type="text" class="form-control" id="patientInputId" [(ngModel)]="consultation.patientName">
+                <input required name="patientName" type="text" class="form-control" #patient="ngModel" [(ngModel)]="consultation.patientName">
                 <div id="patientInputHintId" class="form-text">Введите фамилию, имя и отчество пациента.</div>
             </div>
             <div class="mb-3">
                 <label for="diagnosisInput" class="form-label">Диагноз</label>
-                <input name="diagnosis" type="text" class="form-control" id="diagnosisInputId" [(ngModel)]="consultation.diagnosis">
+                <input required name="diagnosis" type="text" class="form-control" #diagnosis="ngModel" [(ngModel)]="consultation.diagnosis">
                 <div id="diagnosisInputHintId" class="form-text">Подтвердите диагноз пациента.</div>
             </div>
             <div class="mb-3">
                 <label for="departInput" class="form-label">Отделение</label>
-                <input name="department" type="text" class="form-control" id="departInputId" [(ngModel)]="consultation.department">
+                <input required name="department" type="text" class="form-control" #depart="ngModel" [(ngModel)]="consultation.department">
                 <div id="departInputHintId" class="form-text">Введите название отделения, в которое обратился пациент.</div>
             </div>
             <div class="mb-3">
                 <label for="doctorInput" class="form-label">Доктор</label>
-                <input name="doctorName" type="text" class="form-control" id="doctorInputId" [(ngModel)]="consultation.doctorName">
+                <input required name="doctorName" type="text" class="form-control" #doctor="ngModel" [(ngModel)]="consultation.doctorName">
                 <div id="doctorInputHintId" class="form-text">Введите фамилию, имя и отчество доктора.</div>
             </div>
             <div class="mb-3 input-group">
                 <span class="input-group-text">Рекомендации по лечению</span>
-                <textarea name="recommendation" type="text" class="form-control" id="recommInputId" [(ngModel)]="consultation.recommendation"></textarea>
+                <textarea required name="recommendation" type="text" class="form-control" #recom="ngModel" [(ngModel)]="consultation.recommendation"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Отправить</button>
+            <button [disabled]="patient.invalid || diagnosis.invalid || doctor.invalid || depart.invalid || recom.invalid"
+            type="submit" class="btn btn-primary">Отправить</button>
         </form>
     </div>
 </div>
