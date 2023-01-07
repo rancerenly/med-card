@@ -14,6 +14,8 @@ import { MaterialModule } from 'src/material-module';
 
 import { MatTableModule } from '@angular/material/table';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,

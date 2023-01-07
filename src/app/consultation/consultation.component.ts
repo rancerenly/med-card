@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ConsultationComponent implements OnInit {
 
+  dataSource = new MatTableDataSource([]);
 
   constructor(private consultService: ConsultationService, private consultDetailSerivce: ConsultationDetailsService) { }
 
