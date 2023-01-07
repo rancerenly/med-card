@@ -14,10 +14,12 @@
           <a class="nav-link active" aria-current="page" routerLink="add-consultation">Создать консультацию</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Найти пациента" aria-label="Поиск">
-        <button class="btn btn-outline-success" type="submit">Поиск</button>
-      </form>
+      <div [hidden]="true">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Найти пациента" aria-label="Поиск">
+          <button class="btn btn-outline-success" type="submit">Поиск</button>
+        </form>
+      </div>
     </div>
   </div>
 </nav>
