@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Consultation } from '../model/consultation.model';
 import { ConsultationService } from '../services/consultation.service';
 import { ConsultationDetailsService } from '../services/consultation-details.service';
-
+import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-consultation',
   templateUrl: './consultation.component.html',
   styleUrls: ['./consultation.component.scss']
 })
 export class ConsultationComponent implements OnInit {
+
 
   constructor(private consultService: ConsultationService, private consultDetailSerivce: ConsultationDetailsService) { }
 
