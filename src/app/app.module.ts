@@ -9,6 +9,7 @@ import { ConsultationComponent } from './consultation/consultation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AddConsultationComponent } from './add-consultation/add-consultation.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddConsultationComponent } from './add-consultation/add-consultation.co
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

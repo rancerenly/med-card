@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Consultation } from '../model/consultation.model';
 import { ConsultationService } from '../services/consultation.service';
 import { ConsultationDetailsService } from '../services/consultation-details.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-consultation',
@@ -9,7 +10,8 @@ import { ConsultationDetailsService } from '../services/consultation-details.ser
   styleUrls: ['./consultation.component.scss']
 })
 export class ConsultationComponent implements OnInit {
-
+  
+  dataSource = new MatTableDataSource([]);
   constructor(private consultService: ConsultationService, private consultDetailSerivce: ConsultationDetailsService) { }
 
   consultations: Consultation[] = [];
