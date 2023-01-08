@@ -1,5 +1,5 @@
 <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table class="table table-hover" [dataSource]="dataSource">
 
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -39,5 +39,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
+  <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+  </mat-paginator>
 <app-consultation-details [consultId]="consultId" [consultation]="selectedConsultation" [isEdit]="isEdit" ></app-consultation-details>
 <router-outlet></router-outlet>
