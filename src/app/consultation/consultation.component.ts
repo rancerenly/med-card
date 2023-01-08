@@ -72,9 +72,11 @@ export class ConsultationComponent implements OnInit {
     );
   }
 
-  getNextData(limit: number, pageIndex: number){
-    this.consultService.getConsultations(limit, pageIndex)
+  getNextData(currentSize: number, pageSize: number, limit: number){
+    this.consultService.getConsultations(limit, pageSize)
     .subscribe((data: ConsultationPaginateI) => {
+
+      this.consultations.length = currentSize;
 
       this.consultations.push(...data.items);
 
@@ -94,7 +96,8 @@ export class ConsultationComponent implements OnInit {
     let pageIndex = event.pageIndex;
     let pageSize = event.pageSize;
 
-    this.getNextData(pageSize, pageIndex);
+    let previousSize = pageSize * pageIndex;
+    this.getNextData(previousSize, pageIndex, pageSize);
     
     return event;
  }
