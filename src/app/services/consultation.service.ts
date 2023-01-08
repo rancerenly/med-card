@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { Consultation } from '../model/consultation.model';
+import { Consultation, ConsultationPaginateI } from '../model/consultation.model';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,17 @@ export class ConsultationService {
 
   constructor(private http: HttpClient) {}
 
-  getConsultations() {
+  /*getConsultations() {
     return this.http.get<Consultation[]>(this.url);
+  }*/
+
+  getConsultations(limit: number, page: number) {
+    let params = new HttpParams();
+    page++;
+    params = params.set('page', page);
+    params = params.set('limit', limit);
+    console.log(this.url + '?' + params.toString());
+    return this.http.get<ConsultationPaginateI>(this.url + '?' + params.toString());
   }
 
   postConsultation(consultation: Consultation) {

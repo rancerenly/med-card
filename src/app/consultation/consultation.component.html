@@ -39,7 +39,14 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
-  <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+  <mat-paginator 
+  [pageSizeOptions]="pageSizeOptions"
+  [pageSize]="pageSize"
+  class="sticky left-0"
+  [length]="length"
+  [pageIndex]="pageIndex"
+  aria-label="Select page"
+  (page)="pageEvent = handlePageEvent($event)">
   </mat-paginator>
 <app-consultation-details [consultId]="consultId" [consultation]="selectedConsultation" [isEdit]="isEdit" ></app-consultation-details>
 <router-outlet></router-outlet>
